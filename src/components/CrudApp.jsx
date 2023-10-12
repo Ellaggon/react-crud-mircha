@@ -45,19 +45,30 @@ const CrudApp = () => {
     setDb(newData);
   };
   
-  const deleteData = (id) => {};
+  const deleteData = (id) => {
+
+    if(confirm(`Estas seguro de eliminar ${id}`)){
+      const newDb = db.filter(el => el.id !== id)
+      setDb(newDb);  
+    } else {
+      alert("You have canceled the operation");
+    }
+  };
 
   return (
     <>
-    <CrudForm 
-      createData={createData}
-      updateData={updateData}
-      dataToEdit={dataToEdit}
-      setDataToEdit={setDataToEdit}/>
-    <CrudTable 
-      data={db}
-      setDataToEdit={setDataToEdit}
-      deleteData={deleteData}/>
+    <h2>CRUD APP</h2>
+    <article className="grid-1-2">
+      <CrudForm 
+        createData={createData}
+        updateData={updateData}
+        dataToEdit={dataToEdit}
+        setDataToEdit={setDataToEdit}/>
+      <CrudTable 
+        data={db}
+        setDataToEdit={setDataToEdit}
+        deleteData={deleteData}/>
+    </article>
     </>
   )
 }

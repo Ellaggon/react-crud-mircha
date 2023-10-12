@@ -31,4 +31,4 @@ const CrudTable = ({data, setDataToEdit,
   )
 }
 
-export default CrudTable
+export default CrudTable;

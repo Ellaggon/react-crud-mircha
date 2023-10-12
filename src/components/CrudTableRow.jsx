@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const CrudTableRow = ({el, setDataToEdit,
   deleteData}) => {
@@ -16,4 +16,4 @@ const CrudTableRow = ({el, setDataToEdit,
   )
 }
 
-export default CrudTableRow
+export default CrudTableRow;

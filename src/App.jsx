@@ -5,10 +5,10 @@ const App = () => {
 
   return (
     <>
-      <h2>CRUD APP</h2>
       <CrudApp />
+      <hr />
     </>
-  )
-}
+  );
+};
 
 export default App
