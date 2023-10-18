@@ -22,8 +22,18 @@
     },
     {
       "id": 5,
-      "name": "Ikki",
-      "constellation": "Fenix"
+      "name": "Sigfried",
+      "constellation": "Alpha Dobbhe"
+    },
+    {
+      "id": 6,
+      "name": "Shaka",
+      "constellation": "Virgo"
+    },
+    {
+      "name": "Saga",
+      "constellation": "Geminis",
+      "id": 1697505589960
     }
   ]
 }

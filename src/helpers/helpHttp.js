@@ -1,5 +1,5 @@
 export const helpHttp = () => {
-  const customFetch = (endpoints, options) => {
+  const customFetch = (endpoint, options) => {
     const defaultHeader = {
       accept: "application/json",
     };
@@ -9,43 +9,43 @@ export const helpHttp = () => {
 
     options.method = options.method || "GET";
     options.headers = options.headers
-      ? { ...defaultHeader, ...options.header }
+      ? { ...defaultHeader, ...options.headers }
       : defaultHeader;
 
     options.body = JSON.stringify(options.body) || false;
     if (!options.body) delete options.body;
 
-    // console.log(options);
-
+    //console.log(options);
     setTimeout(() => controller.abort(), 3000);
 
-    return fetch(endpoints, options)
+    return fetch(endpoint, options)
       .then((res) =>
         res.ok
           ? res.json()
           : Promise.reject({
               err: true,
               status: res.status || "00",
-              statusText: res.statusText || "Ocurrio un Error",
+              statusText: res.statusText || "Ocurrió un error",
             })
       )
       .catch((err) => err);
   };
 
-  // Cuando no exista options devolvera una objeto vacio
-  const get = (url, options ={}) => customFetch(url, options);
+  const get = (url, options = {}) => customFetch(url, options);
 
-  const post = (url, options ={}) => {
+  const post = (url, options = {}) => {
     options.method = "POST";
-    return customFetch(url, options)
+    return customFetch(url, options);
   };
-  const put = (url, options ={}) => {
+
+  const put = (url, options = {}) => {
     options.method = "PUT";
-    return customFetch(url, options)
+    return customFetch(url, options);
   };
-  const del = (url, options ={}) => {
+
+  const del = (url, options = {}) => {
     options.method = "DELETE";
-    return customFetch(url, options)
+    return customFetch(url, options);
   };
 
   return {
